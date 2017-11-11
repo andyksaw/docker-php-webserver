@@ -1,7 +1,7 @@
 FROM php:7.1-fpm-alpine
 
 # install necessary php modules
-RUN docker-php-ext-install mysqli pdo pdo_mysql bcmath
+RUN docker-php-ext-install mysqli pdo_mysql bcmath
 
 # install required packages, git and node+npm
 RUN apk --no-cache add \
