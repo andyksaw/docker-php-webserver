@@ -1,4 +1,4 @@
-FROM nginx
+FROM nginx:1.13.6-alpine
 
 # overwrite nginx configurations with our own
 COPY conf/nginx.conf /etc/nginx/nginx.conf

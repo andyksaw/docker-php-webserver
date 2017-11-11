@@ -9,7 +9,6 @@ The PHP fpm container also comes preinstalled with:
 * Git
 * Composer
 * Node/NPM
-* SQLite3
 
 ## Set up
 1. Place/clone your source code into the **storage/www** directory
@@ -21,5 +20,5 @@ The PHP fpm container also comes preinstalled with:
 This service can act as both a local development environment or a production environment.
 
 For dev use, edit your source code as per usual from the **storage/www** directory. 
-1. Run ``docker exec -it <php-fpm container id> /bin/bash`` to jump into the PHP container (Use ``docker ps`` to find the container's ID).
+1. Run ``docker exec -it <php-fpm container id> sh`` to jump into the PHP container (Use ``docker ps`` to find the container's ID).
 2. Run your desired cli commands: ``compose install`` or ``npm install`` or ``php artisan migrate``, etc.
