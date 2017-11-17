@@ -12,6 +12,9 @@ services:
 
   php-fpm:
     build: ./php-fpm
+    ports:
+      - 3000:3000   # BrowserSync port
+      - 3001:3001   # BrowserSync port
     volumes:
       - ./storage/www:/var/www/html
     links:
@@ -24,7 +27,7 @@ services:
   database:
     image: mariadb:10.0.20
     ports:
-      - "3306"
+      - "3306:3306"
     env_file:
       - .env
     environment:
