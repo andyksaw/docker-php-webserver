@@ -9,3 +9,6 @@ RUN apk --no-cache add \
 
 # install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# match container user to volume host's user
+RUN sed -ri 's/^www-data:x:82:82:/www-data:x:1000:50:/' /etc/passwd
