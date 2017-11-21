@@ -9,6 +9,7 @@ The PHP fpm container also comes preinstalled with:
 * Git
 * Composer
 * Node/NPM
+* PHPUnit
 
 ## Set up
 1. Place/clone your source code into the **storage/www** directory
