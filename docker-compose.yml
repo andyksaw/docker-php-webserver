@@ -30,7 +30,7 @@ services:
       - ./volumes/redis:/data
 
   database:
-    image: mariadb:10.0.20
+    image: bianjp/mariadb-alpine
     ports:
       - "3306:3306"
     environment:
