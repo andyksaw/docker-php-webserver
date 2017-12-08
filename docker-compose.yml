@@ -2,18 +2,23 @@ version: '3'
 services:
 
   nginx:
-    build: ./nginx
+    build: 
+      context: .
+      dockerfile: containers/nginx/Dockerfile
     ports:
       - "80:80"
+      # - "443:443"   # uncomment if you will serve HTTPS
     volumes:
-      - ./storage/www:/var/www/html
+      - ./volumes/www:/var/www/html
     links:
       - php-fpm
 
   php-fpm:
-    build: ./php-fpm
+    build: 
+      context: .
+      dockerfile: containers/php-fpm/Dockerfile
     volumes:
-      - ./storage/www:/var/www/html
+      - ./volumes/www:/var/www/html
     links:
       - redis
       - database
@@ -24,12 +29,12 @@ services:
   database:
     image: mariadb:10.0.20
     ports:
-      - "3306"
+      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     volumes:
-      - ./storage/database:/var/lib/mysql
+      - ./volumes/database:/var/lib/mysql
   
