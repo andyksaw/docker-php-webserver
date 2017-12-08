@@ -8,7 +8,8 @@ A lightweight docker service designed with the bare minimum required to run a PH
 The PHP fpm container also comes preinstalled with:
 * Git
 * Composer
-* Node/NPM
+* Node (+ npm)
+* PHPUnit
 
 ## Set up
 1. Place/clone your source code into the **volumes/www** directory
