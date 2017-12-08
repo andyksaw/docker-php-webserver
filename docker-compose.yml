@@ -25,6 +25,9 @@ services:
 
   redis:
     image: redis:4.0-alpine
+    command: redis-server --appendonly yes
+    volumes:
+      - ./volumes/redis:/data
 
   database:
     image: mariadb:10.0.20
